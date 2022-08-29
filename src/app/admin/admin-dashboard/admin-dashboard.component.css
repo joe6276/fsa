@@ -1,0 +1,42 @@
+.admin-main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    
+}
+.dash-left{
+    width: 15%;
+    border-top: 1px solid #000;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 10px;
+     background-color:  #f0f4f7;;
+}
+
+a{
+    color: black;
+    padding: 10px ;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.active{
+    color: black;
+    padding: 10px ;
+    background-color:white;
+}
+
+.dash-right{
+   padding-left: 10px;
+    width: 82%;
+    height: 100%;
+}
+
+/* a:hover{
+    color: red;
+    background-color:white;
+
+} */

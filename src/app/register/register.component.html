@@ -1,0 +1,24 @@
+<div class="main-login">
+    <div class="log">
+        <form #form="ngForm" (ngSubmit)="OnSubmit()">
+            <div>
+            <h1>Enter Registration Details</h1>
+        </div>
+           <div>
+            <p>Your Name</p>
+            <input type="text"  required ngModel name="names" />
+        </div>
+        <div>
+            <p>Email</p>
+            <input type="text"  required ngModel name="email" />
+        </div>
+        <div>
+            <p>Password</p>
+            <input type="password"  required ngModel name="password"/>
+        </div>
+        <div>
+            <button> Register</button>
+        </div>
+        </form>
+    </div>
+</div>

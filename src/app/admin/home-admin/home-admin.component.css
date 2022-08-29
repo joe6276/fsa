@@ -1,0 +1,32 @@
+
+.mainhc{
+    width: 90vw;
+    height:100vh;
+    padding: 30px;
+    opacity: 0.9;
+}
+
+.home-admin-main{
+   
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 200px) );
+    gap:20px;
+    
+}
+
+.home-admin-comp{
+    background-color: #fcfbf9;
+    color: white;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: coral;
+    height: 100%;
+}
+.one, .two, .three , .four ,.five{
+    display: flex;
+     gap: 200px;
+    
+}

@@ -1,0 +1,35 @@
+.main{
+width: 100vw;
+height: 90vh;
+}
+
+
+.nav{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,500px );
+    grid-template-rows: 80px;
+    background-color: #f0f4f7;
+    
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+
+}
+.center{
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.icons{
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    
+}

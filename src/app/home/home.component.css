@@ -1,0 +1,46 @@
+.main-home{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 720px);
+    grid-template-rows: repeat(1,1fr);
+    justify-content: center;
+    background-image:url('https://media.about.nike.com/images/80fadab3-f308-41aa-8b8d-09b316e824bd/nike-2022-vol1-seenitall-film-hero.jpg?fm=jpg&q=80&fit=max&crop=3840%2C2160%2C0%2C0&w=4000&w=1920');
+}
+
+.content-home{
+    width: 100%;
+    height: 80%;
+    
+}
+
+
+.content-home img{
+    width: 100%;
+    height: 95%;
+    
+}
+
+.text{
+      width: 100%;
+      height: 70%;
+      display: flex;
+      justify-content:space-evenly;
+      flex-direction: column;
+      align-items: center;
+      color: black;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      opacity: 0.8;
+      padding: 20px;
+      background-color: #ededee;
+}
+
+.text button{
+    width: 30%;
+    padding: 10px 30px ;
+    font-size: 20px;
+    border-style: none;
+    background-color: coral;
+    color: black;
+    border-radius: 10px;
+}

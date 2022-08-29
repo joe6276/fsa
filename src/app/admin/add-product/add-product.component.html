@@ -1,0 +1,44 @@
+
+<div class="container">
+
+    <div class="div1">
+        <img src="https://www.productplan.com/uploads/2018/08/product-development.png" alt="">
+    </div>
+
+    <div class="div2">
+        <h1>Fill this Form to Add a Product</h1>
+          <form [formGroup]="form" (ngSubmit)="addProduct()">
+        <div class="form-control">
+            <p>Product Name</p>
+            <input type="text" formControlName='productName'/>
+        </div>
+        <div class="form-control">
+            <p>Product Description</p>
+            <textarea type="text" rows="3" formControlName='productDescription'></textarea>
+        </div>
+           <div>
+            <p>Product URL</p>
+            <input type="file" formControlName='productUrl' (change)="onChange($event)" />
+          <p *ngIf="loading">Loading...</p>
+
+        </div>
+       
+         <div class="form-control1">
+               <div class="form-control">
+            <p>Price</p>
+           <input type="text" formControlName='sellingAt'/>
+            </div>   
+
+            <div class="form-control">
+            <p> SellingPrice</p>
+            <input type="text" formControlName='price'/>
+            </div>
+
+          
+        </div>
+
+        <button type="submit"> Add product</button>
+    </form>
+    </div>
+
+</div>
