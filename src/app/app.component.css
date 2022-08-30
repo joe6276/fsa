@@ -3,7 +3,7 @@ width: 100vw;
 
 }
   body {
-     overflow-y: scroll;
+     /* overflow-y: scroll; */
    }
 
 .nav{

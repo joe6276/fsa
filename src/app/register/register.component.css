@@ -1,6 +1,6 @@
 .main-login{
     width: 100vw;
-    height: 90vh;
+    min-height: 90vh;
     display: grid;
     justify-content: center;
     align-items: center;

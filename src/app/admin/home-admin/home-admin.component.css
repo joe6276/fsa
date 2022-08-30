@@ -1,7 +1,7 @@
 
 .mainhc{
     width: 90vw;
-    height:100vh;
+    min-height:100vh;
     padding: 30px;
     opacity: 0.9;
 }
@@ -9,7 +9,7 @@
 .home-admin-main{
    
     display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 200px) );
+    grid-template-columns: repeat(auto-fit, minmax(300px, 200px) );
     gap:20px;
     
 }

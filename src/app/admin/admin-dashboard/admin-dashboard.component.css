@@ -1,13 +1,13 @@
 .admin-main{
     width: 90vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     
 }
 .dash-left{
     width: 15%;
     border-top: 1px solid #000;
-    height:100%;
+    min-height:100%;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -32,7 +32,7 @@ a{
 .dash-right{
    padding-left: 10px;
     width: 82%;
-    height: 100%;
+    min-height: 100%;
 }
 
 /* a:hover{
