@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ProductService } from '../ProductService';
 
 @Component({
   selector: 'app-add-product',
@@ -11,7 +13,8 @@ import { Observable } from 'rxjs';
 export class AddProductComponent implements OnInit {
 form!:FormGroup 
 loading=false
-  constructor(private fb :FormBuilder, private http:HttpClient) { }
+convertedUrl!:string
+  constructor(private fb :FormBuilder, private http:HttpClient,private router:Router ,private productService:ProductService) { }
 
   ngOnInit(): void {
     this.form=this.fb.group(
@@ -26,8 +29,12 @@ loading=false
   }
 
   addProduct(){
-    console.log(this.form);
-    
+    this.productService.addProduct({...this.form.value, productUrl:this.convertedUrl}).subscribe(data=>{
+      console.log(data);
+      
+    })  
+    this.productService.getProducts()
+    this.router.navigate(['/admin/products'])
   }
   onChange(event:Event){
    this.loading=true
@@ -44,7 +51,7 @@ loading=false
         "https://api.cloudinary.com/v1_1/joendambuki16/image/upload", formData)
         .subscribe(data=>{
           this.loading=false
-          console.log(data.url);
+          this.convertedUrl= data.url
          
         },
          error => {

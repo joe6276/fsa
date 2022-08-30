@@ -1,1 +1,19 @@
-<p>products works!</p>
+<div class="main-products">    
+    <div class="products">
+            <div class="product" *ngFor="let product of products$|async">
+            <div class="img">
+                <img src="{{product.ProductUrl}}" alt={{product.productName}}>
+            </div>
+            <div>
+                <h3>{{product.productName}}</h3>
+                <p>{{product.productDescription}}</p>
+                <p>{{product.price|currency:'KSH'}}</p>
+            </div>
+
+            </div>
+    </div>
+
+</div>
+<ng-template #noProduct>
+    <p>No Products Found</p>
+</ng-template>
