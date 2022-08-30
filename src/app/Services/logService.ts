@@ -9,10 +9,14 @@ export class logService{
    private token= localStorage.getItem('token') as string
 
     login(){
-       this.token?this.logged=true:false
+    //    localStorage.setItem("token", "hggddtgtd:gretre:yttyrhfdhgd")
     }
     logout(){
-        !this.token?this.logged=false: true
+        localStorage.clear()
+    }
+
+    isLoggedIn(){
+        return !!localStorage.getItem('token');
     }
 
 }

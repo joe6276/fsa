@@ -10,9 +10,9 @@
     <a  *ngIf="logged">Contact</a>
   </div>
   <div class="icons">
-    <a *ngIf="!logged" routerLink="register">Register</a>
+    <a *ngIf="!log.isLoggedIn()" routerLink="register">Register</a>
     <a *ngIf="!logged" routerLink="login">Login</a>
-    <a *ngIf="logged" routerLink="login" (click)="logout()">Logout</a>
+    <a *ngIf="log.isLoggedIn()" routerLink="login" (click)="logout()">Logout</a>
   </div>
 </div>
 <div class="content">

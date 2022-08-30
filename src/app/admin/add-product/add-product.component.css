@@ -1,6 +1,6 @@
 .container{
     width: 90vw;
-    height:90vw;
+    min-height:90vw;
     display: flex;
     gap:20px;
     margin-top: 30px;

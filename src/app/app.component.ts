@@ -9,7 +9,8 @@ import { logService } from './Services/logService';
 export class AppComponent implements OnInit {
   title = 'e-com';
   logged!:boolean
-  constructor(private log:logService){}
+  constructor(public log:logService){}
+  
   ngOnInit(){
     this.logged= this.log.logged
   }
