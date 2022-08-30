@@ -1,8 +1,10 @@
 .main{
 width: 100vw;
-height: 90vh;
-}
 
+}
+  body {
+     overflow-y: scroll;
+   }
 
 .nav{
     display: grid;

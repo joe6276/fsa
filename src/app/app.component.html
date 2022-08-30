@@ -2,16 +2,17 @@
   <div class="nav">
   <div class="logo">
     <ion-icon size="large" name="logo-amplify"></ion-icon>
-    <p>DOD Stores</p>
+    <a routerLink="">DOD Stores</a>
   </div>
   <div class="center">
-    <a routerLink="admin" >Admin</a>
-    <a href="">About</a>
-    <a href="">Contact</a>
+    <a  *ngIf="logged" routerLink="admin" >Admin</a>
+    <a *ngIf="logged">About</a>
+    <a  *ngIf="logged">Contact</a>
   </div>
   <div class="icons">
-    <a routerLink="register"><ion-icon size="large" name="notifications-outline"></ion-icon></a>
-    <a routerLink="login"><ion-icon size="large"  name="people-outline"></ion-icon></a>
+    <a *ngIf="!logged" routerLink="register">Register</a>
+    <a *ngIf="!logged" routerLink="login">Login</a>
+    <a *ngIf="logged" routerLink="login" (click)="logout()">Logout</a>
   </div>
 </div>
 <div class="content">

@@ -1,5 +1,6 @@
 <div class="main-login">
     <div class="log">
+        <p *ngIf="error">{{errorMessage}}</p>
       <form #form="ngForm" (ngSubmit)="onSubmit()">
           <div>
             <h1>Enter Login Details</h1>
