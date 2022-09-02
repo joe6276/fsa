@@ -32,10 +32,30 @@ export interface Product1{
    instock:string
 }
 
-export interface LoginDetails {email:string, password:string}
 
+export interface Product2{
+   id:string
+   productName :string
+   productDescription:string
+   sellingAt:number
+   productUrl:string
+   price:number
+}
+
+export interface LoginDetails {email:string, password:string}
+export interface LoginResponse {
+     message:string
+     role:string, 
+     name:string, 
+     token:string
+     error:boolean}
 
 export interface UserDetail{
     role:string
     names:string
+}
+
+
+export interface UpdateResponse{
+    message:string
 }

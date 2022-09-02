@@ -1,0 +1,54 @@
+.container{
+    width: 90vw;
+    min-height:90vw;
+    display: flex;
+    gap:20px;
+    margin-top: 30px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+}
+
+.form-control1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.form-control1 input{
+    width: 200px;
+}
+
+.div1{
+    width: 50%;
+    height: 100%;
+}
+
+.div1 img{
+    height: 40%;
+     width: 100%;
+}
+
+.div2{
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.div2 input{
+    padding: 8px;
+}
+
+button{
+    width: 81%;
+    color: white;
+    background-color: coral;
+    padding: 10px 20px ;
+    margin-top: 20px;
+    font-size: 20px;
+}
