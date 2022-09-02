@@ -21,24 +21,19 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.log.login()
     const loginDetails:LoginDetails =this.form.value;
-    this.auth.logUser(loginDetails).subscribe(data=>{
-      
-      if(data.error){
-          this.errorMessage=data.errorMessage
-           this.error=true
-      }
-      this.error=false
+    this.auth.logUser(loginDetails).subscribe(
+      data=>{
       localStorage.setItem('token', data.token)
-      const token = localStorage.getItem('token')
-      if(token){
-        this.auth.checkUser().subscribe(dta=>{
-          dta.role==='admin'? this.router.navigate(['/admin']):'/'
-        })
+
+        this.router.navigate(
+         [ data.role === 'admin'?'/admin':'/']
+        )
+      },
+      error=>{
+          this.error=true
+          this.errorMessage= error.error.errorMessage
       }
-    },
-    error=>{
-      console.log(error);
-    }
+      
     )
     
 }

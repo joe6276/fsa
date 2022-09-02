@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -16,7 +20,8 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,10 @@ import { RegisterComponent } from './register/register.component';
     IonicModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,  
+    HttpClientModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({name:'Product', maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([]),  
   ],
 
   bootstrap: [AppComponent]

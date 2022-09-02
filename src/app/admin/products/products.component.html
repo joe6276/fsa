@@ -1,6 +1,12 @@
-<div class="main-products">    
-    <div class="products">
-            <div class="product" *ngFor="let product of products$|async">
+
+<div class="main-products"> 
+    <div>
+        <input type="checkbox" (change)="onChangeInput()"  [checked]="showDiscount|async" /> 
+        <p>Show Discount</p>
+       
+    </div>   
+    <div class="products" >
+            <div class="product" *ngFor="let product of products$|async" (click)="onNavigate(product.id)" >
             <div class="img">
                 <img src="{{product.ProductUrl}}" alt={{product.productName}}>
             </div>
@@ -8,8 +14,17 @@
                 <h3>{{product.productName}}</h3>
                 <p>{{product.productDescription}}</p>
                 <p>{{product.price|currency:'KSH'}}</p>
+                <p *ngIf="showDiscount |async">{{getDiscount(product.price, product.sellingAt)|number:'1.2-2'|percent}}</p>
             </div>
-
+            <div class="editdel">
+                    <a [routerLink]="[product.id]"> <ion-icon name="eye-outline" size="large" ></ion-icon></a>
+                    <a [routerLink]="[ product.id,'edit']">
+                        <ion-icon name="create-outline" size="large" class="edit"></ion-icon>
+                    </a>
+                    <a (click)="deleteProduct(product.id)" [ngStyle]="{cursor:'pointer'}">
+                        <ion-icon name="trash-outline" size="large"  class="del"></ion-icon>
+                    </a>
+                </div>
             </div>
     </div>
 

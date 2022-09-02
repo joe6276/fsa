@@ -11,7 +11,7 @@
   </div>
   <div class="icons">
     <a *ngIf="!log.isLoggedIn()" routerLink="register">Register</a>
-    <a *ngIf="!logged" routerLink="login">Login</a>
+    <a *ngIf="!log.isLoggedIn()" routerLink="login">Login</a>
     <a *ngIf="log.isLoggedIn()" routerLink="login" (click)="logout()">Logout</a>
   </div>
 </div>

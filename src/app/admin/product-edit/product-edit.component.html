@@ -6,8 +6,8 @@
     </div>
 
     <div class="div2">
-        <h1>Fill this Form to Add a Product</h1>
-          <form [formGroup]="form" (ngSubmit)="addProduct()">
+        <h1>Update Product</h1>
+          <form [formGroup]="form" (ngSubmit)="updateProduct()">
         <div class="form-control">
             <p>Product Name</p>
             <input type="text" formControlName='productName'/>
@@ -37,7 +37,7 @@
           
         </div>
 
-        <button type="submit"> Add product</button>
+        <button [disabled]="!this.form.valid" type="submit"> Update product</button>
     </form>
     </div>
 

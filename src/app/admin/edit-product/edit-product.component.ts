@@ -1,25 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Product } from 'src/app/interface';
 import { ProductState } from '../Redux/Reducer/ProductReducer';
 import * as Actions from '../Redux/Actions/ProductsActions'
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  selector: 'app-edit-product',
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.css']
 })
-export class AddProductComponent implements OnInit {
-form!:FormGroup 
+export class EditProductComponent implements OnInit {
+form!:FormGroup
 loading=false
-convertedUrl!:string
-  constructor(private fb :FormBuilder, private http:HttpClient,private router:Router,
+convertedurl!:string
+  constructor(private fb:FormBuilder,private http:HttpClient,
     private store:Store<ProductState>) { }
 
   ngOnInit(): void {
-    this.form=this.fb.group(
+    this.store.dispatch(Actions.LoadProducts())
+      this.form=this.fb.group(
      {
        productName:[],
        productDescription:[],
@@ -30,13 +29,11 @@ convertedUrl!:string
     )
   }
 
-  addProduct(){
-   const newProduct:Product={...this.form.value, productUrl:this.convertedUrl}
-   this.store.dispatch(Actions.AddProduct({newProduct}))
-   this.store.dispatch(Actions.LoadProducts())
-  this.router.navigate(['/admin/products'])
+  updateProduct(){
+
   }
-  onChange(event:Event){
+
+   onChange(event:Event){
    this.loading=true
     const target= event.target! as HTMLInputElement
     const files= target.files
@@ -51,7 +48,7 @@ convertedUrl!:string
         "https://api.cloudinary.com/v1_1/joendambuki16/image/upload", formData)
         .subscribe(data=>{
           this.loading=false
-          this.convertedUrl= data.url
+          this.convertedurl= data.url
          
         },
          error => {

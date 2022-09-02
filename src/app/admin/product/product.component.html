@@ -1,0 +1,15 @@
+<h2>Here</h2>
+
+<div class="product-main" *ngIf="product$ |async as prod">
+
+   <div class="product">
+     <div class="div-left">
+        <img [src]="prod.ProductUrl" alt="">
+    </div>
+    <div class="div-right">
+        <h1>{{prod.productName}}</h1>
+        <p>{{prod.productDescription}}</p>
+    </div>
+   </div>
+
+</div>
